@@ -53,20 +53,20 @@ class HaxeSuite implements SuiteObject {
 	}
 
 	public function setup():Promise<Noise> {
-		haxecase.setup();
 		return Promise.NOISE;
 	}
 
 	public function before():Promise<Noise> {
+		haxecase.setup();
 		return Promise.NOISE;
 	}
 
 	public function after():Promise<Noise> {
+		haxecase.tearDown();
 		return Promise.NOISE;
 	}
 
 	public function teardown():Promise<Noise> {
-		haxecase.tearDown();
 		return Promise.NOISE;
 	}
 }
